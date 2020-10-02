@@ -52,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][docs/images/petstore.png]](https://github.com/xlapi/openapi-excel)
+![openapi-excel screen shot](docs/images/petstore.png "openapi-excel screen shot")
 
 This allows you to use Swagger/OpenAPI in Excel! Don't waste time creating calls one by one!
 
@@ -102,6 +102,6 @@ Your Name - [@evolvedlight](https://twitter.com/evolvedlight) - steve@evolvedlig
 [issues-shield]: https://img.shields.io/github/issues/xlapi/openapi-excel.svg?style=flat-square
 [issues-url]: https://github.com/xlapi/openapi-excel/issues
 [license-shield]: https://img.shields.io/github/license/xlapi/openapi-excel.svg?style=flat-square
-[license-url]: https://github.com/xlapi/openapi-excel/blob/master/LICENSE.txt
+[license-url]: https://github.com/xlapi/openapi-excel/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: www.linkedin.com/in/stephen-d-brown
+[linkedin-url]: https://www.linkedin.com/in/stephen-d-brown
