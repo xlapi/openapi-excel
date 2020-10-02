@@ -23,11 +23,6 @@ namespace openapi_excel.UI.Ribbon
             {
                 string result = reader.ReadToEnd();
                 var control = XDocument.Parse(result);
-
-                //var statusLabel = control.Descendants().Single(x => x.Attribute("id")?.Value == "apiConnectionStatus");
-
-                
-
                 return control.ToString();
             }
         }

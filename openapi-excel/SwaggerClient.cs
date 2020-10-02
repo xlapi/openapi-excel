@@ -54,7 +54,7 @@ namespace openapi_excel
 
             var httpRequest = new HttpRequestMessage();
 
-            var securityToAdd = new List<SecurityThing>();
+            var securityToAdd = new List<SecurityKeyValue>();
 
             if (methodAndOperation.Value.Security.Any())
             {
