@@ -1,0 +1,17 @@
+﻿<customUI xmlns='http://schemas.microsoft.com/office/2006/01/customui' onLoad="OnRibbonLoad">
+  <ribbon>
+    <tabs>
+      <tab id='openApiTab' label='OpenApi'>
+        <group id='statusGroup' label='Status'>
+          <labelControl id='apiConnectionStatus' getLabel='getStatusLabel'/>
+        </group>
+        <group id='setupGroup' label='Setup'>
+          <button id='showApiSheet' label='Show API Worksheet' size='large' imageMso='PivotTableListFormulas' onAction='onShowDocumentation'/>
+          <button id='showDocumentation' label='API Help' size='large' imageMso='Help' onAction='onShowHelp'/>
+          <button id='login' label='Login' size='large' imageMso='Help' onAction='onShowLogin'/>
+          <button id='security' label='API Security' size='large' imageMso='Help' onAction='onShowSecurity'/>
+        </group >
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
