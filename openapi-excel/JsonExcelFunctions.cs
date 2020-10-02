@@ -8,19 +8,6 @@ namespace openapi_excel
 {
     public class JsonExcelFunctions
     {
-        [ExcelFunction(Description = "Changes color")]
-        public static string TEST()
-        {
-            ExcelAsyncUtil.QueueAsMacro(() =>
-            {
-                Microsoft.Office.Interop.Excel.Application app = (Microsoft.Office.Interop.Excel.Application)ExcelDnaUtil.Application;
-                Microsoft.Office.Interop.Excel.Range range = app.ActiveCell;
-                var rang2 = ((Worksheet)app.ActiveSheet()).Cells[2, 2];
-                rang2.NumberFormat = "0.00";
-            });
-            return "Ok";
-        }
-
         [ExcelFunction(Description = "JSON Path")]
         public static string JSONPATH(string contents, string path)
         {

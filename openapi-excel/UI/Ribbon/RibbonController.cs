@@ -27,6 +27,16 @@ namespace openapi_excel.UI.Ribbon
             }
         }
 
+        public void onConnectToApi(IRibbonControl control)
+        {
+            var addApiDialog = new AddApiDialog();
+            addApiDialog.ShowDialog();
+            
+            var url = addApiDialog.Url;
+            
+            SwaggerRegistry.Instance.Register(url, false);
+        }
+
         public string getStatusLabel(IRibbonControl control)
         {
             if (SwaggerRegistry.ApiLoadStatusStatic?.Status == null)
@@ -45,6 +55,8 @@ namespace openapi_excel.UI.Ribbon
                     return "Unknown failure";
                 case ApiLoadStatus.NotSet:
                     return "NotSet";
+                case ApiLoadStatus.NotYetLoaded:
+                    return "Not yet loaded";
             }
             return "Error";
         }

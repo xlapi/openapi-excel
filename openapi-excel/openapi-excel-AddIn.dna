@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DnaLibrary Name="openapi-excel Add-In" RuntimeVersion="v4.0" xmlns="http://schemas.excel-dna.net/addin/2018/05/dnalibrary">
-  <ExternalLibrary Path="openapi-excel.dll" ExplicitExports="false" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+  <ExternalLibrary Path="openapi-excel.dll" ExplicitExports="false" ExplicitRegistration="true" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 
+  <ExternalLibrary Path="Newtonsoft.Json.dll" Pack='true' ExplicitRegistration="true" />
+  <ExternalLibrary Path="Microsoft.OpenApi.dll" Pack='true' ExplicitRegistration="true" />
+  <ExternalLibrary Path="Microsoft.OpenApi.Readers.dll" Pack='true' ExplicitRegistration="true" />
+  <ExternalLibrary Path="Microsoft.OpenApi.Readers.dll" Pack='true' ExplicitRegistration="true" />
+  <ExternalLibrary Path="SharpYaml.dll" Pack='true' ExplicitRegistration="true" />
+  <ExternalLibrary Path="ExcelDna.Registration.dll" Pack='true' ExplicitRegistration="true" />
+  <ExternalLibrary Path="Meziantou.Framework.Win32.CredentialManager.dll" Pack='true' ExplicitRegistration="true" />
   <!--
        The RuntimeVersion attribute above allows two settings:
        * RuntimeVersion="v4.0" - for .NET 4 and 4.5

@@ -41,10 +41,9 @@ namespace openapi_excel
 
             _syncContext = SynchronizationContext.Current ?? new WindowsFormsSynchronizationContext();
 
-            SwaggerRegistry.ApiLoadStatusStatic.Status = ApiLoadStatus.Loading;
+            SwaggerRegistry.ApiLoadStatusStatic.Status = ApiLoadStatus.NotYetLoaded;
 
-            var registry = instance.Create<SwaggerRegistry>();
-            registry.Register();
+            instance.Create<SwaggerRegistry>();
         }
     }
 }

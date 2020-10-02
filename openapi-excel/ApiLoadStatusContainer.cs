@@ -18,6 +18,7 @@
         Loading = 1,
         Loaded = 2,
         ConnectionFailure = 3,
-        UnknownFailure = 4
+        UnknownFailure = 4,
+        NotYetLoaded = 5
     }
 }

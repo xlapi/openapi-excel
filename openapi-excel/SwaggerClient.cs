@@ -69,7 +69,7 @@ namespace openapi_excel
                     httpRequest.Headers.Authorization =
                         new AuthenticationHeaderValue(
                             "Basic", Convert.ToBase64String(
-                                System.Text.ASCIIEncoding.ASCII.GetBytes(
+                                System.Text.Encoding.ASCII.GetBytes(
                                     $"{SwaggerRegistry.BasicAuthCreds.Username}:{SwaggerRegistry.BasicAuthCreds.Password}")));
                 }
 
@@ -144,14 +144,14 @@ namespace openapi_excel
             }
         }
 
-        public async Task<ValidationResult> Validate(string url)
+        public ValidationResult Validate(string url)
         {
             var httpClient = new HttpClient();
 
             try
             {
                 Uri baseUri = new Uri(url);
-                await httpClient.GetAsync(baseUri);
+                httpClient.GetAsync(baseUri).ConfigureAwait(false).GetAwaiter().GetResult();
                 return new ValidationResult { IsOk = true };
             }
             catch (Exception e)

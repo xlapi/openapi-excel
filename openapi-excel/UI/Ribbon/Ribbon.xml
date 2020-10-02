@@ -3,6 +3,7 @@
     <tabs>
       <tab id='openApiTab' label='OpenApi'>
         <group id='statusGroup' label='Status'>
+          <button id='connectToApi' label='Connect To Api' size='large' imageMso='GetExternalDataFromWeb' onAction='onConnectToApi'/>
           <labelControl id='apiConnectionStatus' getLabel='getStatusLabel'/>
         </group>
         <group id='setupGroup' label='Setup'>

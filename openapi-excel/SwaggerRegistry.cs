@@ -8,7 +8,6 @@ using ExcelDna.Integration;
 using openapi_excel.Security;
 using openapi_excel.UI.Ribbon;
 using Microsoft.OpenApi.Models;
-using System.Configuration;
 using System.Windows.Forms;
 
 namespace openapi_excel
@@ -36,14 +35,11 @@ namespace openapi_excel
             Instance = this;
         }
 
-        public void Register(bool reregister = false)
+        public void Register(string url, bool reregister = false)
         {
-            var appSettings = ConfigurationManager.AppSettings;
-            var url = appSettings["ApiUrl"];
-
             _syncContext = SynchronizationContext.Current ?? new WindowsFormsSynchronizationContext();
 
-            Task.Factory.StartNew(() => Register(appSettings["ApiUrl"]));
+            Task.Factory.StartNew(() => Register(url));
         }
 
         public async Task Register(string url)
@@ -68,7 +64,7 @@ namespace openapi_excel
                     var httpException = e.InnerException as WebException;
                     if (httpException != null && httpException.Status == WebExceptionStatus.ConnectFailure)
                     {
-                        SwaggerRegistry.ApiLoadStatusStatic.Status = ApiLoadStatus.ConnectionFailure;
+                        ApiLoadStatusStatic.Status = ApiLoadStatus.ConnectionFailure;
                         _syncContext.Post(delegate (object state)
                         {
                             AfterLoadedError(url);
@@ -87,13 +83,13 @@ namespace openapi_excel
                 RegisteredFunctions = FunctionRegistrar.RegisterApi(apiDefinition, false);
                 ApiKeyCredentials = Api.Components.SecuritySchemes.Values.Where(ss => ss.Type == SecuritySchemeType.ApiKey).ToDictionary(s => s.Name, s => new ApiKey { Key = s.Name, Value = "", In = s.In });
             });
-            SwaggerRegistry.ApiLoadStatusStatic.Status = ApiLoadStatus.Loaded;
+            ApiLoadStatusStatic.Status = ApiLoadStatus.Loaded;
             RibbonController.InvalidateRibbon();
         }
 
         private void AfterLoadedError(string url)
         {
-            SwaggerRegistry.ApiLoadStatusStatic.Status = ApiLoadStatus.ConnectionFailure;
+            ApiLoadStatusStatic.Status = ApiLoadStatus.ConnectionFailure;
             RibbonController.InvalidateRibbon();
         }
 
@@ -117,7 +113,7 @@ namespace openapi_excel
 
         internal void Refresh()
         {
-            Register(reregister: true);
+            Register(Url, true);
         }
     }
 }

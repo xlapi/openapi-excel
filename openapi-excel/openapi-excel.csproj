@@ -87,7 +87,7 @@
     <Compile Include="JsonExtensions.cs" />
     <Compile Include="RegistrationResults.cs" />
     <Compile Include="SecurityManager.cs" />
-    <Compile Include="SecurityThing.cs" />
+    <Compile Include="SecurityKeyValue.cs" />
     <Compile Include="Security\BasicAuthCredentials.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

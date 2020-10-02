@@ -29,7 +29,7 @@ namespace openapi_excel.UI
 
             var descriptionLabel = new Label();
             descriptionLabel.Text = SwaggerRegistry.Api.Info.Description;
-            descriptionLabel.Location = new System.Drawing.Point(8, 10);
+            descriptionLabel.Location = new Point(8, 10);
             descriptionLabel.Size = new Size(width - 16, TOTAL_LABEL_HEIGHT);
             Controls.Add(descriptionLabel);
 
@@ -40,7 +40,7 @@ namespace openapi_excel.UI
                 {
                     var operationLabel = new Label();
                     operationLabel.Text = operation.Value.OperationId;
-                    operationLabel.Location = new System.Drawing.Point(8, currentY);
+                    operationLabel.Location = new Point(8, currentY);
                     operationLabel.ForeColor = Color.FromArgb(117, 11, 28);
                     operationLabel.BackColor = Color.FromArgb(255, 255, 255);
                     operationLabel.Padding = new Padding(8);
@@ -51,7 +51,7 @@ namespace openapi_excel.UI
 
                     var addOperationButton = new Button();
                     addOperationButton.Text = "Add to worksheet";
-                    addOperationButton.Location = new System.Drawing.Point(8, currentY);
+                    addOperationButton.Location = new Point(8, currentY);
                     addOperationButton.FlatStyle = FlatStyle.Flat;
                     addOperationButton.FlatAppearance.BorderColor = Color.FromArgb(22, 21, 20);
                     addOperationButton.FlatAppearance.BorderSize = 1;

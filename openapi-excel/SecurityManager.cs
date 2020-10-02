@@ -9,7 +9,6 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
-using System.Windows.Forms;
 
 namespace openapi_excel
 {
@@ -66,7 +65,7 @@ namespace openapi_excel
         {
             if (SwaggerRegistry.Api == null)
             {
-                System.Windows.MessageBox.Show("Api not loaded");
+                MessageBox.Show("Api not loaded");
             }
 
             var appSettings = ConfigurationManager.AppSettings;
